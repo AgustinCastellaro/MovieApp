@@ -1,0 +1,16 @@
+.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loading__icon{
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to{
+        transform: rotate(360deg);
+    }
+}

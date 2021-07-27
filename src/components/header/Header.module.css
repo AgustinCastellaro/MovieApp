@@ -1,0 +1,182 @@
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.header nav{
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    height: 60px;
+    background-color: #0f0f0f;
+}
+
+.header nav a{
+    font-size: 20px;
+    font-weight: 400;
+    color: #2ECC71;
+    text-decoration: none;
+}
+
+.header nav a::first-letter{
+    font-weight: 600;
+}
+
+.header ul{
+    margin: 0;
+    padding: 0 30px;
+    list-style: none;
+}
+
+.header ul li{
+    position: relative;
+    display: inline-block;
+}
+
+.header ul li:hover ul.submenu{
+    visibility: visible;
+    opacity: 1;
+    transition: ease-in-out 0.15s all;
+}
+
+.header ul li a{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #a8a8a8;
+    text-decoration: none;
+    transition: ease-in-out 0.15s all;
+}
+
+.header ul li a:hover{
+    color: #2ECC71;
+    transition: ease-in-out 0.15s all;
+}
+ 
+.header ul.submenu{
+    position: absolute;
+    flex-wrap: initial;
+    width: 500px;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    background: #252525;
+    border-radius: 10px;
+    transition: ease-in-out 0.15s all;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header ul.submenu li{
+    position: relative;
+    width: 50%;
+    padding: 0;
+}
+
+.header .hamburgerIcon{
+    position: relative;
+    display: none;
+    align-items: center;
+    margin: 0 0 0 auto;
+    width: 25px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.header .hamburgerIcon .bar1,
+.header .hamburgerIcon .bar2,
+.header .hamburgerIcon .bar3{
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #a8a8a8;
+    transition: ease-in-out 0.15s all;
+}
+
+.header .hamburgerIcon .bar1{
+    top: 6px;
+}
+
+.header .hamburgerIcon .bar3{
+    bottom: 6px;
+}
+
+.header input[type="checkbox"]{
+    display: none;
+}
+
+.header input[type="checkbox"]:checked ~ .hamburgerIcon .bar1{
+    transform: rotate(-45deg);
+    top: 13px;
+}
+
+.header input[type="checkbox"]:checked ~ .hamburgerIcon .bar2{
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.header input[type="checkbox"]:checked ~ .hamburgerIcon .bar3{
+    transform: rotate(45deg);
+    bottom: 13px;    
+}
+
+.header input[type="checkbox"]:checked ~ ul{
+    visibility: visible;
+    opacity: 1;
+    top: 60px;
+    transition: ease-in-out 0.4s all;
+}
+
+
+
+@media (max-width: 770px){
+    .header .hamburgerIcon{
+        display: flex;
+    }
+
+    .header nav > ul{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: -100vh;
+        right: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background: #141414;
+        z-index: 5;
+        visibility: hidden;
+        opacity: 0;
+        transition: ease-in-out 0.4s all;
+    }
+
+    .header ul li{
+        width: 100%;
+        padding: 25px 0;
+        text-align: center;
+        border-bottom: 1px solid #161616;
+    }
+
+    .header ul li a{
+        font-size: 18px;
+    }
+
+    .header ul.submenu{
+        top: 65px;
+        right: 0;
+        padding: 0;
+        width: auto;
+        height: 400px;
+        background: rgb(27, 27, 27);
+        visibility: visible;
+        opacity: 1;
+        border-radius: 0;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .header ul.submenu li{
+        width: 100%;
+    }
+}

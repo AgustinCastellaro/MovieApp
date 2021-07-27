@@ -1,0 +1,49 @@
+.moviesGrid__grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-gap: 40px;
+    padding: 40px 10%;
+}
+
+.moviesGrid .pagination,
+.moviesGrid .pagination__top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 50px;
+}
+
+.moviesGrid .pagination__top{
+    margin: 20px 0;
+}
+
+.moviesGrid .pagination button,
+.moviesGrid .pagination__top button{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #252525;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: ease-in-out 0.15s all;
+}
+
+.moviesGrid .pagination button:hover,
+.moviesGrid .pagination__top button:hover{
+    background-color: #2ECC71;
+    color: #252525;
+    transition: ease-in-out 0.15s all;
+}
+
+.moviesGrid .pagination .pages,
+.moviesGrid .pagination__top .pages{
+    display: flex;
+    margin: 0 20px;
+}
+
+.moviesGrid .pagination .pages p,
+.moviesGrid .pagination__top .pages p{
+    margin: 0 6px;
+}

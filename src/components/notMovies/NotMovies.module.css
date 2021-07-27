@@ -1,0 +1,14 @@
+.notMovies{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.notMovies p{
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    color: #2ECC71;
+}

@@ -1,0 +1,113 @@
+.movieDetails__info{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 40px 0;
+    padding: 0 15%;
+    height: auto;
+    z-index: 3;
+}
+
+.detailsImage{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+}
+
+.movieDetails__info__data{
+    margin: 40px 0 40px 40px;
+    max-width: 1100px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.movieDetails__info__data p.movie__title{
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.movieDetails__info__data__time{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+    white-space: pre-line;
+
+}
+
+.movieDetails__info__data__time p.runtime,
+.movieDetails__info__data__time p.release_date{
+    margin: 0 30px 0 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.movieDetails__info__data__time p.vote_average{
+    font-size: 16px;
+    font-weight: 400;
+    color: #0f0f0f;
+    padding: 5px 10px;
+    background-color: #EECE31;
+    border-radius: 10px;
+}
+
+.movieDetails__info__data p.description{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.movieDetails__info__data__genres{
+    display: flex;
+    font-size: 14px;
+}
+
+.movieDetails__info__data__genres button.genre{
+    margin: 0 0 0 10px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: ease-in-out 0.15s all;
+}
+
+.movieDetails__info__data__genres button.genre:hover{
+    color: #2ECC71;
+    transition: ease-in-out 0.15s all;
+}
+
+
+/* Video */
+.movieDetails__video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 15%;
+    padding: 12% 0;
+    border-radius: 10px;
+    z-index: 3;
+    background-color: #181818;
+}
+
+
+/* Responsive */
+@media (max-width: 700px){
+    .movieDetails__info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .movieDetails__info__data{
+        margin: 40px 0;
+    }
+
+    .movieDetails__video{
+        padding: 20% 0;
+    }
+}

@@ -1,0 +1,35 @@
+form{
+    padding: 0;
+}
+
+button.genre{
+    width: 100%;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: ease-in-out 0.15s all;
+}
+
+button.genre:hover{
+    color: #2ECC71;
+    background: #131313;
+    transition: ease-in-out 0.15s all;
+}
+
+button.genre:focus{
+    color: #252525;
+    background: #2ECC71;
+    transition: ease-in-out 0.15s all;
+}
+
+@media (max-width: 770px){
+    button.genre{
+        text-align: center;
+    }
+}
