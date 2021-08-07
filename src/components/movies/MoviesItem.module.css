@@ -1,12 +1,13 @@
 .moviesItem{
+    position: relative;
     list-style: none;
     font-size: 16px;
     color: #ffffff;
 }
 
 .movieImage{
-    width: 250px;
-    height: 375px;
+    width: 240px;
+    height: 360px;
     background-color: #1a1a1a;
     border-radius: 10px;
     transition: ease-in-out 0.15s all;
@@ -30,9 +31,80 @@
     overflow: hidden;
 }
 
-.movieInfo p.vote_average{
-    font-size: 16px;
-    color: #a8a8a8;
-    margin: 0;
+.iconPlay{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-size: 100px;
+    display: none;
+}
+
+.moviesItem:hover .iconPlay{
+    display: flex;
+}
+
+.movieInfoHover{
+    position: absolute;
+    display: none;
+    top: 20%;
+    left: 50px;
+    right: -150px;
+    background-color: #000000;
     border-radius: 10px;
+    z-index: 5;
+}
+
+.movieInfoHover .movieInfoHover__content{
+    position: relative;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 20px 15px;
+    z-index: 5;
+}
+
+.movieInfoHover .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.movieInfoHover .description{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.movieInfoHover p.vote_average{
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: #EECE31;
+    border-radius: 10px;
+}
+
+.movieInfoHover .movieInfoHover__img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(7px);
+    opacity: 0.3;
+    z-index: 4;
+}
+
+.movieInfoHover .movieInfoHover__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 770px){
+    .moviesItem:hover .movieInfoHover{
+        display: block;
+    }
 }

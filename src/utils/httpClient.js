@@ -2,10 +2,6 @@ const API = "https://api.themoviedb.org/3";
 
 export function get(path, secondaryParam, page, location){
     let queryString = API;
-    console.log(path)
-    console.log(secondaryParam)
-    console.log(page)
-    console.log(location)
 
     if(path == "/discover/movie/"){
         page = "?page=" + page;
@@ -30,13 +26,11 @@ export function get(path, secondaryParam, page, location){
         path = path + secondaryParam;
         page = "&page=" + page;
         queryString = queryString + path + page;
-        console.log(queryString) /* quitar */
     }
 
     //List of genres.
     if(path == "/genre/movie/list"){
         queryString = queryString + path
-        console.log(queryString) /* quitar */
     }
 
     //Query.
@@ -47,5 +41,5 @@ export function get(path, secondaryParam, page, location){
             "Content-Type": 
                 "application/json;charset=utf-8",
         },
-    }).then(result => result.json())   
+    }).then(result => result.json())
 }

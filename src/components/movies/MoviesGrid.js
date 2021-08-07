@@ -14,6 +14,8 @@ let path;
 let secondaryParam;
 
 function MoviesGrid() {
+    const [disabledLeft, setDisabledLeft] = useState(true);
+    const [disabledRight, setDisabledRight] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [movies, setMovies] = useState([]);
 
@@ -22,12 +24,10 @@ function MoviesGrid() {
 
     const location = useLocation()
     const params = useParams()
-    console.log(params);
     
     useEffect(() => {
         setIsLoading(true);
         if(search){
-            console.log("in a search");
             path = "/search/movie?query=";
             secondaryParam = search;
         }else{
@@ -40,7 +40,7 @@ function MoviesGrid() {
             }
         }
         get(path, secondaryParam, 1, location.pathname).then((data) => {
-            console.log(data)
+            console.log(data);
             totalPages = data.total_pages;
             setMovies(data.results);
             setIsLoading(false);
@@ -65,6 +65,9 @@ function MoviesGrid() {
 
     //Pagination.
     const adjacentPage = (adjacentPage) => {
+        console.log(adjacentPage);
+        (adjacentPage > 1 || adjacentPage == totalPages) ? setDisabledLeft(false) : setDisabledLeft(true);
+        (adjacentPage == totalPages) ? setDisabledRight(true) : setDisabledRight(false);
         setIsLoading(true);
         if(search){
             console.log("in a search");
@@ -90,7 +93,7 @@ function MoviesGrid() {
     return (
         <div className={styles.moviesGrid}>
             <div className={styles.pagination__top}>
-                <button onClick={() => adjacentPage(actualPage - 1)}>
+                <button onClick={() => adjacentPage(actualPage - 1)} disabled={disabledLeft}>
                     <RiArrowLeftSLine />
                 </button>
                 <div className={styles.pages}>
@@ -98,7 +101,7 @@ function MoviesGrid() {
                     <p>of</p>
                     <p className={styles.totalPages}>{totalPages}</p>
                 </div>
-                <button onClick={() => adjacentPage(actualPage + 1)}>
+                <button onClick={() => adjacentPage(actualPage + 1)} disabled={disabledRight}>
                     <RiArrowRightSLine />
                 </button>
             </div>
@@ -110,7 +113,7 @@ function MoviesGrid() {
             </ul>
             
             <div className={styles.pagination}>
-                <button onClick={() => adjacentPage(actualPage - 1)}>
+                <button onClick={() => adjacentPage(actualPage - 1)} disabled={disabledLeft}>
                     <RiArrowLeftSLine />
                 </button>
                 <div className={styles.pages}>
@@ -118,7 +121,7 @@ function MoviesGrid() {
                     <p>of</p>
                     <p className={styles.totalPages}>{totalPages}</p>
                 </div>
-                <button onClick={() => adjacentPage(actualPage + 1)}>
+                <button onClick={() => adjacentPage(actualPage + 1)} disabled={disabledRight}>
                     <RiArrowRightSLine />
                 </button>
             </div>
