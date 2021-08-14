@@ -5,7 +5,7 @@ import styles from './Loading.module.css';
 function Loading() {
     return (
         <div className={styles.loading}>
-            <ImSpinner9 size={40} className={styles.loading__icon} />
+            <ImSpinner9 className={styles.loading__icon} />
         </div>
     )
 }
